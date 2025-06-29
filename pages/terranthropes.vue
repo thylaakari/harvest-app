@@ -1,32 +1,47 @@
 <template>
-  <UContainer class="min-h-screen">
-    <!-- Header Section -->
-    <header class="py-8 text-center">
-      <h1 class="text-4xl font-bold">Террантропы</h1>
-      <p class="mt-2 text-lg">
-        Террантропы — гуманоиды с головами зверей, воплощающие первобытную связь
-        с дикой природой. Их инстинкты и звериная ловкость делают их
-        непревзойдёнными собирателями и мастерами перемещения. В игре они
-        сосредоточены на добыче ресурсов (магических семян) и быстром захвате
-        ключевых зон, избегая прямых столкновений, но используя хитрость и
-        скорость для достижения целей. Каждая подраса (Серпентиды, Тавроны,
-        Авианы, Лантерийцы, Сквирены) имеет уникальные способности, дополняющие
-        общий стиль расы.
-      </p>
-    </header>
+  <div
+    class="min-h-screen bg-gray-900 text-gray-100 flex flex-col items-center"
+  >
+    <UCard class="w-full max-w-4xl bg-gray-800 border-gray-700 shadow-2xl">
+      <template #header>
+        <h1 class="text-3xl font-bold text-center text-amber-400 tracking-wide">
+          Террантропы
+        </h1>
+      </template>
 
-    <!-- Miniatures Section -->
-    <DataList :miniatures="miniatures">></DataList>
+      <div>
+        <p class="text-lg text-gray-200 mb-6">
+          Террантропы — мастера хитрости и скорости, избегающие прямых
+          столкновений. Их инстинкты и звериная ловкость позволяют им
+          доминировать в добыче ресурсов и захвате зон. Каждая подраса —
+          Серпентиды, Тавроны, Авианы, Лантерийцы и Сквирены — обладает
+          уникальными способностями, усиливающими их стратегическую гибкость.
+        </p>
 
-    <!-- Back to Races Link -->
-    <section class="py-12 text-center">
-      <UButton to="/" variant="outline" size="lg"> Назад к расам </UButton>
-    </section>
-  </UContainer>
+        <DataList :miniatures="miniatures"></DataList>
+      </div>
+
+      <template #footer>
+        <div class="text-center py-4">
+          <UButton
+            to="/"
+            variant="outline"
+            size="lg"
+            color="amber"
+            class="hover:bg-amber-600 hover:text-gray-100 transition-colors"
+          >
+            Назад к расам
+          </UButton>
+        </div>
+      </template>
+    </UCard>
+  </div>
 </template>
 
 <script setup>
-// Sample miniatures data for Terranthropes
+import { ref } from 'vue'
+
+// Данные террантропов
 const miniatures = ref([
   {
     id: 1,
@@ -117,3 +132,22 @@ const miniatures = ref([
   },
 ])
 </script>
+
+<style scoped>
+/* Тёмное фэнтези оформление с мистическими эффектами */
+.bg-gray-900 {
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url('https://source.unsplash.com/random/1920x1080?dark,fantasy,beast');
+  background-size: cover;
+  background-position: center;
+}
+
+/* Эффект свечения при наведении */
+.bg-gray-700:hover {
+  background-image: linear-gradient(
+    rgba(251, 191, 36, 0.1),
+    rgba(251, 191, 36, 0.1)
+  );
+}
+</style>

@@ -1,26 +1,39 @@
 <template>
-  <UContainer class="min-h-screen">
-    <!-- Header Section -->
-    <header class="py-8 text-center">
-      <h1 class="text-4xl font-bold">Пепельные стрелки</h1>
-      <p class="mt-2 text-lg">
-        Пепельные стрелки - это люди, выжившие в мрачном мире, где пепел от
-        сгоревших лесов покрывает землю. Их бледные лица скрыты под капюшонами,
-        а глаза горят решимостью. Они мастера дальнего боя, использующие луки,
-        арбалеты и метательные ножи, пропитанные ядами и магией. Из-за жизни в
-        суровых условиях их тела хрупки, но их оружие позволяет поражать врагов
-        на расстоянии, не вступая в ближний бой.
-      </p>
-    </header>
+  <div
+    class="min-h-screen bg-gray-900 text-gray-100 flex flex-col items-center"
+  >
+    <UCard class="w-full max-w-4xl bg-gray-800 border-gray-700 shadow-2xl">
+      <template #header>
+        <h1 class="text-3xl font-bold text-center text-amber-400 tracking-wide">
+          Пепельные стрелки
+        </h1>
+      </template>
 
-    <!-- Miniatures Section -->
-    <DataList :miniatures="miniatures">></DataList>
+      <div>
+        <p class="text-lg text-gray-200 mb-6">
+          Люди, эксперты в дальнем бое и тактической точности. Используя луки,
+          арбалеты и пращи, они контролируют зоны флагов и наносят урон
+          издалека, полагаясь на манёвренность и стратегическое позиционирование
+        </p>
 
-    <!-- Back to Races Link -->
-    <section class="py-12 text-center">
-      <UButton to="/" variant="outline" size="lg"> Назад к расам </UButton>
-    </section>
-  </UContainer>
+        <DataList :miniatures="miniatures"></DataList>
+      </div>
+
+      <template #footer>
+        <div class="text-center py-4">
+          <UButton
+            to="/"
+            variant="outline"
+            size="lg"
+            color="amber"
+            class="hover:bg-amber-600 hover:text-gray-100 transition-colors"
+          >
+            Назад к расам
+          </UButton>
+        </div>
+      </template>
+    </UCard>
+  </div>
 </template>
 
 <script setup>

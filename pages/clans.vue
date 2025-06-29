@@ -1,26 +1,39 @@
 <template>
-  <UContainer class="min-h-screen">
-    <!-- Header Section -->
-    <header class="py-8 text-center">
-      <h1 class="text-4xl font-bold">Костяные кланы</h1>
-      <p class="mt-2 text-lg">
-        Костяные Кланы — это некогда живые воины, чьи души были связаны с их
-        костями древними ритуалами некромантии. Они не мертвы, но и не живы,
-        существуя в мучительном полусуществовании. Их тела — это скелеты,
-        усиленные магическими рунами и металлическими доспехами, движимые жаждой
-        битвы и искупления. Каждый воин Костяных Кланов клянется захватить как
-        можно больше флагов, чтобы доказать свою силу и заслужить покой.
-      </p>
-    </header>
+  <div
+    class="min-h-screen bg-gray-900 text-gray-100 flex flex-col items-center"
+  >
+    <UCard class="w-full max-w-4xl bg-gray-800 border-gray-700 shadow-2xl">
+      <template #header>
+        <h1 class="text-3xl font-bold text-center text-amber-400 tracking-wide">
+          Террантропы
+        </h1>
+      </template>
 
-    <!-- Miniatures Section -->
-    <DataList :miniatures="miniatures">></DataList>
+      <div>
+        <p class="text-lg text-gray-200 mb-6">
+          Воины, связанные с некромантией и магией костей. Они оживляют павших и
+          усиливают союзников, сосредотачиваясь на выживании и контроле зон
+          через прочные миниатюры и способности восстановления.
+        </p>
 
-    <!-- Back to Races Link -->
-    <section class="py-12 text-center">
-      <UButton to="/" variant="outline" size="lg"> Назад к расам </UButton>
-    </section>
-  </UContainer>
+        <DataList :miniatures="miniatures"></DataList>
+      </div>
+
+      <template #footer>
+        <div class="text-center py-4">
+          <UButton
+            to="/"
+            variant="outline"
+            size="lg"
+            color="amber"
+            class="hover:bg-amber-600 hover:text-gray-100 transition-colors"
+          >
+            Назад к расам
+          </UButton>
+        </div>
+      </template>
+    </UCard>
+  </div>
 </template>
 
 <script setup>

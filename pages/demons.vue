@@ -1,29 +1,42 @@
 <template>
-  <UContainer class="min-h-screen p-0">
-    <!-- Header Section -->
-    <header class="py-8 text-center">
-      <h1 class="text-4xl font-bold">Порождения бездны</h1>
-      <p class="mt-2 text-lg">
-        Порождения Бездны — существа, призванные из тёмных измерений через
-        древние ритуалы. Их тела сотканы из эфира и теней, а их разумы подчинены
-        жажде власти. Они стремятся захватить флаги, чтобы напитать свои алтари
-        энергией, укрепляя связь с Бездной. Каждое Порождение — воплощение
-        ужаса, способное искажать реальность и сеять хаос среди врагов.
-      </p>
-    </header>
+  <div
+    class="min-h-screen bg-gray-900 text-gray-100 flex flex-col items-center"
+  >
+    <UCard class="w-full max-w-4xl bg-gray-800 border-gray-700 shadow-2xl">
+      <template #header>
+        <h1 class="text-3xl font-bold text-center text-amber-400 tracking-wide">
+          Террантропы
+        </h1>
+      </template>
 
-    <!-- Miniatures Section -->
-    <DataList :miniatures="miniatures">></DataList>
+      <div>
+        <p class="text-lg text-gray-200 mb-6">
+          Демонические существа, жаждущие хаоса. Их агрессивные способности
+          наносят мощный урон, жертвуя выживаемостью ради подавляющей силы в
+          прямых столкновениях и сея разрушение на поле боя.
+        </p>
 
-    <!-- Back to Races Link -->
-    <section class="py-12 text-center">
-      <UButton to="/" variant="outline" size="lg"> Назад к расам </UButton>
-    </section>
-  </UContainer>
+        <DataList :miniatures="miniatures"></DataList>
+      </div>
+
+      <template #footer>
+        <div class="text-center py-4">
+          <UButton
+            to="/"
+            variant="outline"
+            size="lg"
+            color="amber"
+            class="hover:bg-amber-600 hover:text-gray-100 transition-colors"
+          >
+            Назад к расам
+          </UButton>
+        </div>
+      </template>
+    </UCard>
+  </div>
 </template>
 
 <script setup>
-// Sample miniatures data for Terranthropes
 const miniatures = ref([
   {
     id: 13,
