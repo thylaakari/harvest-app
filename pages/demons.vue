@@ -5,7 +5,7 @@
     <UCard class="w-full max-w-4xl bg-gray-800 border-gray-700 shadow-2xl">
       <template #header>
         <h1 class="text-3xl font-bold text-center text-amber-400 tracking-wide">
-          Террантропы
+          Порождения бездны
         </h1>
       </template>
 
