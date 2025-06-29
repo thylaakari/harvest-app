@@ -1,6 +1,6 @@
 <template>
   <div
-    class="min-h-screen bg-gray-900 text-gray-100 flex flex-col items-center p-4"
+    class="min-h-screen bg-gray-900 text-gray-100 flex flex-col items-center"
   >
     <UCard class="w-full max-w-4xl bg-gray-800 border-gray-700 shadow-2xl">
       <template #header>
@@ -12,7 +12,7 @@
 
       <div
         v-if="miniatures && miniatures.length"
-        class="grid grid-cols-1 gap-6 p-6"
+        class="grid grid-cols-1 gap-y-6"
       >
         <UCard
           v-for="miniature in miniatures"
@@ -24,7 +24,7 @@
               {{ miniature.name }}
             </h3>
           </template>
-          <div class="p-4">
+          <div>
             <table
               v-if="hasValidStats(miniature)"
               class="w-full mt-4 text-gray-200 border-collapse"
@@ -62,13 +62,12 @@
               Нет данных о характеристиках...
             </p>
             <p class="font-semibold mt-4 text-amber-300">Способности:</p>
-            <ul class="list-none space-y-2 mt-2">
+            <ul class="list-disc space-y-2 mt-2">
               <li
                 v-for="(skill, index) in miniature.skills || []"
                 :key="index"
                 class="flex items-center gap-2 text-gray-200"
               >
-                <UIcon name="i-heroicons-star" class="text-amber-400" />
                 {{ skill || 'Нет способностей' }}
               </li>
             </ul>

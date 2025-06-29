@@ -1,5 +1,5 @@
 <template>
-  <UContainer class="min-h-screen">
+  <UContainer class="min-h-screen p-0">
     <!-- Header Section -->
     <header class="py-8 text-center">
       <h1 class="text-4xl font-bold">Порождения бездны</h1>
