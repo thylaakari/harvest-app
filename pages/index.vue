@@ -63,28 +63,6 @@
           </NuxtLink>
         </div>
       </section>
-
-      <!-- Action Buttons -->
-      <section class="py-12 text-center space-y-6">
-        <UButton
-          to="/game"
-          variant="solid"
-          size="xl"
-          color="amber"
-          class="hover:bg-amber-600 transition-colors"
-        >
-          Начать игру
-        </UButton>
-        <UButton
-          to="/craft"
-          variant="solid"
-          size="xl"
-          color="amber"
-          class="hover:bg-amber-600 transition-colors"
-        >
-          Крафт
-        </UButton>
-      </section>
     </UCard>
   </div>
 </template>
